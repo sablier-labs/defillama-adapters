@@ -12,6 +12,7 @@ const chainIds = {
   'arbitrum': 42161,
   'fantom': 250,
   'avax': 43114,
+  'xdai': 100,
 }
 
 const getCacheData = {}
@@ -55,7 +56,7 @@ async function graphQuery(endpoint, graphQuery, params = {}, { timestamp, chain,
 async function covalentGetTokens(address, chain = 'ethereum') {
   let chainId = chainIds[chain]
   if (!chainId) throw new Error('Missing chain to chain id mapping:' + chain)
-  if (!address) throw new Error('Missing adddress')
+  if (!address) throw new Error('Missing address')
 
   const timeNow = +Date.now()
   const THREE_DAYS = 3 * 24 * 3600 * 1000
